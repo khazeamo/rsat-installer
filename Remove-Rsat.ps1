@@ -4,7 +4,7 @@
    trying to uninstall a dependent FoD.
    If a reboot is required or a FoD failes to uninstall because of dependencies,
    exit code 3010 is returned. In this case, reboot the device and launch the
-   script again.
+   script again until all FoD are removed.
    There should be no dependency related failures, if the order below isn't
    changed and a reboot is executed each time a 3010 is returned.
 
