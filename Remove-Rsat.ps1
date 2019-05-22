@@ -1,19 +1,3 @@
-<# Some RSAT FoD have dependencies and need to be uninstalled in the
-   corret order.
-   Some RSAT FoD may require a reboot. The reboot is required before
-   trying to uninstall a dependent FoD.
-   If a reboot is required or a FoD failes to uninstall because of dependencies,
-   exit code 3010 is returned. In this case, reboot the device and launch the
-   script again until all FoD are removed.
-   There should be no dependency related failures, if the order below isn't
-   changed and a reboot is executed each time a 3010 is returned.
-
-   The reboots can be handled automatically by SCCM based on the return code.
-   As long as the detection method detects the package as installed,
-   the script will be launched again by SCCM. You can use a footprint
-   (e.g. in the registry) for the detection method and remove it only,
-   after all FoD have been uninstalled (see if-statement at the very end).
-#>
 $packages =
 'Rsat.CertificateServices.Tools~~~~0.0.1.0',
 'Rsat.DHCP.Tools~~~~0.0.1.0',
